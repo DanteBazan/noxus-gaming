@@ -333,6 +333,11 @@ footer {
     display: none;
   }
 
+  .categorys {
+    max-width: 900px;
+    justify-content: center;
+  }
+
   .footer__list {
     flex-direction: column;
   }
