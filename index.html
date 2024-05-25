@@ -15,19 +15,19 @@
     <header>
       <h1>NoxusGaming</h1>
       <nav class="navbar">
-        <ul>
+        <ul class="navbar__list">
+          <button class="close__menu"><i class="bi bi-x-lg"></i></button>
           <li><a href="#hero" class="active">Home</a></li>
           <li><a href="#benefits">Beneficios</a></li>
           <li><a href="#products">Productos</a></li>
           <li><a href="#">Contactanos</a></li>
         </ul>
-        <div class="container__cart">
-          <i class="bi bi-cart-fill"></i>
-          <button class="bubble">0</button>
-        </div>
       </nav>
+      <button class="open__menu"><i class="bi bi-list"></i></button>
     </header>
+    <!-- MAIN -->
     <main>
+      <!-- HERO -->
       <section id="hero">
         <div class="hero__info">
           <h2>Bienvenido a <span>NoxusGaming</span></h2>
@@ -54,6 +54,7 @@
           </div>
         </div>
       </section>
+      <!-- SECCION DE BENEFICIOS -->
       <section id="benefits">
         <h3 class="benefits__title">Beneficios</h3>
         <div class="container__card-benefits">
@@ -81,6 +82,7 @@
           </div>
         </div>
       </section>
+      <!-- SECCION DE PRODUCTOS -->
       <section id="products">
         <h4 class="products__title">Productos</h4>
         <ul class="categorys">
@@ -171,7 +173,21 @@
           <button class="button__see-more">Ver mas</button>
         </div>
       </section>
+      <section id="contact">
+        <form class="form">
+          <div class="form__input">
+            <input type="text" placeholder="Nombre" />
+          </div>
+          <div class="form__input">
+            <input type="text" placeholder="Nombre" />
+          </div>
+          <div class="form__input">
+            <input type="text" placeholder="Nombre" />
+          </div>
+        </form>
+      </section>
     </main>
+    <!-- FOOTER -->
     <footer>
       <ul class="footer__list">
         <li>Terminos y Condiciones</li>
@@ -179,7 +195,8 @@
         <li><a href="#" target="_blank">Mi Instagram</a></li>
       </ul>
     </footer>
-    <script src="./dataJS/data.js"></script>
-    <script type="module" src="./main.js"></script>
+    <!-- ARCHIVOS JAVASCRIPT -->
+    <script src="./scripts/data.js"></script>
+    <script type="module" src="./scripts/main.js"></script>
   </body>
 </html>
