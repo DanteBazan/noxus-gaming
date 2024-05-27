@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* border: 1px solid red; */
+}
+
+:root {
+  /*BACKGROUNDS-COLORS  */
+  --color-main: #111;
+  --color-second: #222;
+  --color-red: rgb(214, 40, 40);
+  --color-three: #48e;
+
+  /* COLOR TEXT */
+  --color-white: #eee;
+}
+
+body {
+  background: var(--color-main);
+  color: var(--color-white);
+  font-family: sans-serif;
+}
+
+/* LOGIN */
+
+h1 {
+  text-align: center;
+  font-size: 1.7rem;
+  padding: 1rem;
+}

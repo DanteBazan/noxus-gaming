@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* border: 1px solid red; */
+}
+
+:root {
+  /*BACKGROUNDS-COLORS  */
+  --color-main: #111;
+  --color-second: #222;
+  --color-red: rgb(214, 40, 40);
+  --color-three: #48e;
+
+  /* COLOR TEXT */
+  --color-white: #eee;
+}
+
+body {
+  background: var(--color-main);
+  color: var(--color-white);
+  font-family: sans-serif;
+}
+
+/* Register */
+
+h1 {
+  text-align: center;
+  font-size: 1.7rem;
+  padding: 1rem;
+}
+
+.form {
+  background: var(--color-second);
+  max-width: 800px;
+  padding: 1rem 0.5rem;
+  border-radius: 0.6rem;
+  margin: 1rem auto;
+}
+
+.form h2 {
+  text-align: center;
+  padding: 0.7rem;
+}
+
+.form__input {
+  margin: 1rem;
+  padding: 0.5rem 0.3rem;
+}
+
+.form__input input {
+  width: 100%;
+  padding: 0.6rem;
+  background: rgb(41, 40, 40);
+  border: 0;
+  border-left: 3px solid var(--color-red);
+  font-family: sans-serif;
+  color: var(--color-white);
+}
+
+.form__input input::placeholder {
+  color: var(--color-white);
+}
+
+.form__input input:focus-visible {
+  outline: none;
+}
+
+.form__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form__button button {
+  border: 0;
+  border-radius: 0.5rem;
+  background: var(--color-red);
+  color: var(--color-white);
+  padding: 0.5rem 1rem;
+  transition: box-shadow 0.5s;
+}
+
+.form__button button:hover {
+  box-shadow: 0 0 7px var(--color-red);
+}
+
+.container__back-page {
+  display: flex;
+  justify-content: center;
+}
+
+.container__back-page a {
+  color: var(--color-white);
+  padding: 1rem;
+}
