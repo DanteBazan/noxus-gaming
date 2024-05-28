@@ -24,8 +24,61 @@ body {
 
 /* LOGIN */
 
-h1 {
+.form {
+  background: var(--color-second);
+  padding: 0.8rem;
+  margin: 3rem auto;
+  max-width: 800px;
+}
+
+.form h2 {
   text-align: center;
-  font-size: 1.7rem;
   padding: 1rem;
+}
+
+.form__input {
+  margin: 1rem;
+  padding: 0.5rem 0.3rem;
+}
+
+.form__input input {
+  width: 100%;
+  border: 0;
+  background: rgb(41, 40, 40);
+  padding: 0.6rem;
+  color: var(--color-white);
+  border-left: 3px solid var(--color-red);
+}
+
+.form__input input:focus-visible {
+  outline: none;
+}
+
+.container__option-register {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.container__option-register a {
+  color: var(--color-red);
+}
+
+.form__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form__button button {
+  border: 0;
+  border-radius: 0.5rem;
+  background: var(--color-red);
+  color: var(--color-white);
+  padding: 0.5rem 1rem;
+  transition: box-shadow 0.5s;
+}
+
+.form__button button:hover {
+  box-shadow: 0 0 7px var(--color-red);
 }

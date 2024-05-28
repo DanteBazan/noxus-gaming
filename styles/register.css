@@ -58,11 +58,7 @@ h1 {
   color: var(--color-white);
 }
 
-.form__input input::placeholder {
-  color: var(--color-white);
-}
-
-.form__input input:focus-visible {
+.form__input:focus-visible {
   outline: none;
 }
 
