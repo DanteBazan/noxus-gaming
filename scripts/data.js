@@ -2,7 +2,7 @@ const products = [
   // AVENTURA
   {
     id: 1,
-    name: "Minecraft: Java & Bedrock Edition (PC)",
+    name: "Minecraft: Java & Bedrock (PC)",
     precio: "12500",
     category: "aventura",
     gameImg: "../imgs/juegos/minecraft.webp",
@@ -16,7 +16,7 @@ const products = [
   },
   {
     id: 3,
-    name: "Ghost of Tsushima | Director's Cut (PC)",
+    name: "Ghost of Tsushima (PC)",
     precio: 20000,
     category: "aventura",
     gameImg: "../imgs/juegos/ghost-of-tsushima.avif",
@@ -26,7 +26,7 @@ const products = [
     name: "Grand Theft Auto V (PC)",
     precio: 15000,
     category: "aventura",
-    gameimg: "../imgs/juegos/grand-theft-auto.avif",
+    gameImg: "../imgs/juegos/grand-theft-auto.avif",
   },
   {
     id: 5,
@@ -45,7 +45,7 @@ const products = [
   // DEPORTES
   {
     id: 7,
-    name: "NBA 2K24 | Kobe Bryant Edition (PC)",
+    name: "NBA 2K24 (PC)",
     precio: 12600,
     category: "deportes",
     gameImg: "../imgs/juegos/nba-2k24.jpeg",
@@ -59,14 +59,14 @@ const products = [
   },
   {
     id: 9,
-    name: "PGA TOUR 2K23 | Standard Edition (PC)",
+    name: "PGA TOUR 2K23 (PC)",
     precio: 13600,
     category: "deportes",
     gameImg: "../imgs/juegos/pga-tour-2k23.jpeg",
   },
   {
     id: 10,
-    name: "NASCAR Heat 5 | Ultimate Edition (PC)",
+    name: "NASCAR Heat 5 (PC)",
     precio: 2700,
     category: "deportes",
     gameImg: "../imgs/juegos/nascar-heat-5.avif",
@@ -88,7 +88,7 @@ const products = [
   // CARRERAS
   {
     id: 13,
-    name: "Assetto Corsa | Ultimate Edition (PC)",
+    name: "Assetto Corsa (PC)",
     precio: 12500,
     category: "carreras",
     gameImg: "../imgs/juegos/assetto-corsa.avif",
@@ -116,7 +116,7 @@ const products = [
   },
   {
     id: 17,
-    name: "Need for Speed Heat | Deluxe Edition (PC)",
+    name: "Need for Speed Heat (PC)",
     precio: 20000,
     category: "carreras",
     gameImg: "../imgs/juegos/need-for-speed-heat.webp",
@@ -134,11 +134,11 @@ const products = [
     name: "7 Days to Die",
     precio: 12780,
     category: "disparos",
-    gameimg: "../imgs/juegos/7-days-to-die.avif",
+    gameImg: "../imgs/juegos/7-days-to-die.avif",
   },
   {
     id: 20,
-    name: "Killing Floor 2 - Deluxe Edition (PC)",
+    name: "Killing Floor 2 (PC)",
     precio: 5000,
     category: "disparos",
     gameImg: "../imgs/juegos/killing-floor-2.webp",
@@ -166,7 +166,7 @@ const products = [
   },
   {
     id: 24,
-    name: "Star Wars Battlefront 2 Edition (PC)",
+    name: "Star Wars Battlefront 2 (PC)",
     precio: 12500,
     category: "disparos",
     gameImg: "../imgs/juegos/stars-wars-battlefront-2.webp",

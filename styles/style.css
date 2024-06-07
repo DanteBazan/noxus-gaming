@@ -179,7 +179,7 @@ header {
   gap: 0.5rem;
 }
 
-.button__cart {
+.button__cart-more {
   border: 0;
   background: none;
   color: var(--color-white);
@@ -189,7 +189,17 @@ header {
   transition: box-shadow 0.5s;
 }
 
-.button__cart:hover {
+.button__cart-less {
+  border: 0;
+  background: none;
+  color: var(--color-white);
+  font-size: 1.5rem;
+  background: var(--color-red);
+  border-radius: 0.2rem;
+  transition: box-shadow 0.5s;
+}
+
+.button__cart-more, .button__cart-less:hover {
   box-shadow: 0 0 7px var(--color-red);
 }
 
@@ -491,6 +501,27 @@ footer {
 
 .footer__list a:hover {
   text-decoration: underline;
+}
+
+/* MODAL */
+
+.add-modal {
+  padding: 1.3rem 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-white);
+  background-color: rgb(5, 136, 5);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  transition: all 0.5s ease-out;
+  transform: translateY(200%);
+}
+
+.active-modal {
+  transform: translateY(0);
+  transition: all 0.5s ease-in;
 }
 
 /* CLASES PARA AGREGAR DESDE JAVASCRIPT */;
