@@ -188,9 +188,8 @@ const isInactiveFilterBtn = (element) => {
  */
 
 const renderFilterProducts = () => {
-  const filteredProducts = products.filter((product) => {
-    product.category === appState.activeFilter;
-  });
+  const filteredProducts = products.filter(
+    (product) => product.category === appState.activeFilter);
   renderProducts(filteredProducts);
 };
 
