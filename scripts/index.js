@@ -55,7 +55,7 @@ const createTemplateProduct = (product) => {
          <h3>${name}</h3>
             <div class="card__hero-info">
               <span>$ ${precio}</span>
-              <button id="add-button" data-id="${id} data-name="${name}" data-precio="${precio}" data-img="${gameImg}" >Agregar</button>
+              <button data-id="${id} data-name="${name}" data-precio="${precio}" data-img="${gameImg}">Agregar</button>
          </div>
     </div>
   `;
@@ -124,8 +124,8 @@ const setShowMoreVisivility = () => {
  */
 
 const changeBtnActiveState = (selectedCategory) => {
-  const categorys = [...categoriesList];
-  categorys.forEach((categoryBtn) => {
+  const categories = [...categoriesList];
+  categories.forEach((categoryBtn) => {
     if (categoryBtn.dataset.category !== selectedCategory) {
       categoryBtn.classList.remove("active__category");
       return;
@@ -178,7 +178,7 @@ const applyFilter = ({ target }) => {
 
 const isInactiveFilterBtn = (element) => {
   return (
-    element.classList.contains("category") &&
+    element.classList.contains("category__button") &&
     !element.classList.contains("active__category")
   );
 };
