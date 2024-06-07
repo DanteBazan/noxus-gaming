@@ -34,7 +34,7 @@ h1 {
   background: var(--color-second);
   max-width: 800px;
   padding: 1rem 0.5rem;
-  border-radius: 0.6rem;
+  border-radius: 0.3rem;
   margin: 1rem auto;
 }
 
@@ -58,7 +58,7 @@ h1 {
   color: var(--color-white);
 }
 
-.form__input:focus-visible {
+.form__input input:focus-visible {
   outline: none;
 }
 

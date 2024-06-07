@@ -19,12 +19,16 @@
 body {
   background: var(--color-main);
   color: var(--color-white);
-  font-family: sans-serif;
+  font-family: 'Roboto',sans-serif;
 }
 
 /* HEADER */
 header {
-  background: var(--color-second);
+  background: linear-gradient(
+    to bottom,
+    var(--color-second),
+    var(--color-main)
+  );
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -52,26 +56,24 @@ header {
 
 .active {
   font-weight: bold;
-  color: var(--color-three);
+  color: var(--color-red);
 }
 
 .navbar__list li a {
   color: var(--color-white);
   text-decoration: none;
+  transition: text-shadow .5s;
 }
 
 .navbar__list li a:hover {
-  padding-bottom: 0.2rem;
-  border-bottom: 1px solid var(--color-white);
+  /* padding-bottom: 0.2rem; */
+  /* border-bottom: 1px solid var(--color-white); */
+  text-shadow: var(--color-white) 0 0 7px;
 }
 
 /* TOGGLE-MENU */
 
 .open__menu {
-  display: none;
-}
-
-.close__menu {
   display: none;
 }
 
@@ -87,6 +89,10 @@ header {
   cursor: pointer;
 }
 
+.cart__container::-webkit-scrollbar {
+  display: none;
+}
+
 /* CARRITO */
 
 .container__cart-option {
@@ -95,9 +101,9 @@ header {
 
 .cart__bubble {
   position: absolute;
-  top: 0;
-  right: 0;
-  padding: 1px;
+  top: -3px;
+  right: -2px;
+  padding: 2px;
   border-radius: 1rem;
   background: var(--color-red);
 }
@@ -106,7 +112,11 @@ header {
   position: absolute;
   top: 59.38px;
   right: 0;
-  background: var(--color-second);
+  background: linear-gradient(
+    to bottom,
+    var(--color-main),
+    var(--color-second)
+  );
   height: 100vh;
   width: 100%;
   max-width: 500px;
@@ -298,17 +308,19 @@ main {
 
 .card__img {
   border-radius: 0.7rem;
-  max-width: 300px;
+  max-width: 280px;
 }
 
 .hero__card h3 {
   padding: 0.5rem;
   font-size: 1rem;
+  max-width: 250px;
 }
 
 .card__hero-info {
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
   padding: 0.5rem;
 }
 
@@ -318,11 +330,11 @@ main {
   color: var(--color-white);
   padding: 0.5rem;
   border-radius: 0.2rem;
-  transition: 0.5s;
+  transition: box-shadow 0.5s;
 }
 
 .card__hero-info button:hover {
-  background: var(--color-three);
+  box-shadow: 0 0 7px var(--color-red);
 }
 
 /* BENEFICIOS */
@@ -433,6 +445,29 @@ main {
   box-shadow: 0 0 7px var(--color-red);
 }
 
+.hidden__btn {
+  visibility: hidden;
+}
+
+/* MODAL PARA CUANDO UN PRODUCTO SE AGREGA AL CARRITO */
+
+.modal__add {
+  position: fixed;
+  text-align: center;
+  background: green;
+  padding: 1.3rem;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+}
+
+/* CLASE PARA QUE SE MUESTRE EL MODAL */
+
+.modal__visivilite {
+  visibility: visible;
+}
+
 /* FOOTER */
 footer {
   display: flex;
@@ -458,84 +493,17 @@ footer {
   text-decoration: underline;
 }
 
-/* MEDIA QUERIES */
+/* CLASES PARA AGREGAR DESDE JAVASCRIPT */;
 
-@media screen and (max-width: 1000px) {
-  h1 {
-    font-size: 1.5rem;
-  }
-
-  /* HERO */
-
-  #hero {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .hero__info {
-    justify-content: center;
-    align-items: center;
-  }
-
-  .hero__info h2 {
-    text-align: center;
-  }
-
-  .hero__info p {
-    text-align: center;
-  }
-
-  .navbar {
-    gap: 1rem;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .navbar__list {
-    background: var(--color-second);
-    width: 100%;
-    height: calc(100vh - 59.38px);
-    position: absolute;
-    top: 59.38px;
-    left: 0;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 7rem;
-    visibility: hidden;
-  }
-
-  .visibilite {
-    visibility: visible;
-  }
-
-  .categorys {
-    max-width: 900px;
-    justify-content: center;
-  }
-
-  .footer__list {
-    flex-direction: column;
-  }
-
-  /* toggle-menu */
-  .open__menu {
-    display: block;
-    border: 0;
-    background: none;
-    color: var(--color-white);
-    font-size: 1.5rem;
-  }
-
-  .close__menu {
-    display: block;
-    border: 0;
-    background: none;
-    color: var(--color-white);
-    font-size: 1.7rem;
-    position: absolute;
-    top: 0;
-    right: 1rem;
-  }
+.disabled {
+  background-color: var(--text-gray);
+  color: white;
+  cursor: not-allowed;
+  border: none;
+}
+.disabled:hover {
+  background-color: var(--text-gray);
+  color: white;
+  cursor: not-allowed;
+  border: none;
 }

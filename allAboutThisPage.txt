@@ -1,0 +1,8 @@
+===> ESTADO
+
+==> El concepto de estaod de una aplicacion hace referencia a las varaibles y valores que guarda una aplicacion. El estado puede cambiar medida que el usuario va ejecutando acciones.
+
+==> Pensando en este concepto, crearemos un objeto appState que nos servira para manipular , especificamente en lo relacionado al renderizado de la seccion de productos.
+
+==> Es super importante que vayan amigandose con este concepto, ya que mas adelante, en el modulo de react, sera un conpeto clave a dominar.
+

@@ -29,6 +29,7 @@ body {
   padding: 0.8rem;
   margin: 3rem auto;
   max-width: 800px;
+  border-radius: 0.3rem;
 }
 
 .form h2 {
