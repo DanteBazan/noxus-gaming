@@ -204,7 +204,7 @@ const renderFilterProducts = () => {
  * @returns {string}  Template del producto del carrito
  */
 
-const createProductOfCard = (cartProduct) => {
+const createProductOfCart = (cartProduct) => {
   const { id, name, precio, gameImg, quantity } = cartProduct;
   return `
   <div class="cart__product">
@@ -221,7 +221,7 @@ const createProductOfCard = (cartProduct) => {
     <span>$ ${precio}</span>
   </div>
   <div class="container__add-cart">
-    <button class="button__cart-less " data-id="${id}" ><i class="bi bi-dash"></i></button>
+    <button class="button__cart-less" data-id="${id}" ><i class="bi bi-dash"></i></button>
     <span>${quantity}</span>
     <button class="button__cart-more" data-id="${id}"><i class="bi bi-plus"></i></button>
   </div>
@@ -239,7 +239,7 @@ const renderCart = () => {
     cartProducts.innerHTML = `<p class="msj-empty">No hay productos en el carrito</p>`;
     return;
   }
-  cartProducts.innerHTML = cart.map(createProductOfCard).join("");
+  cartProducts.innerHTML = cart.map(createProductOfCart).join("");
 };
 
 /**

@@ -7,8 +7,9 @@
 
 :root {
   /*BACKGROUNDS-COLORS  */
-  --color-main: #111;
-  --color-second: #222;
+  --color-main: #0c0c0c;
+  /* --color-second: #222; */
+  --color-second:#141313;
   --color-red: rgb(214, 40, 40);
   --color-three: #48e;
 
@@ -103,8 +104,15 @@ header {
   position: absolute;
   top: -3px;
   right: -2px;
-  padding: 2px;
-  border-radius: 1rem;
+  width: 15px;
+  height: 15px;
+  padding: 6px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  font-size: 13px;
   background: var(--color-red);
 }
 
@@ -413,10 +421,11 @@ main {
 
 .categorys {
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 1.5rem;
   margin: 1rem;
   flex-wrap: wrap;
-  list-style-type: none;
 }
 
 .category__button {

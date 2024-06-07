@@ -72,7 +72,18 @@
     font-size: 1.5rem;
   }
 
-  .close__menu {
+/* BOTONES DE CATEGORIAS */
+
+.categorys {
+  flex-wrap: wrap;
+  max-width: 390px;
+}
+
+.category__button {
+  width: 100px;
+}
+
+  /* .close__menu {
     display: block;
     border: 0;
     background: none;
@@ -81,7 +92,7 @@
     position: absolute;
     top: 0;
     right: 1rem;
-  }
+  } */
 
   /* .overlay {
     position: absolute;
