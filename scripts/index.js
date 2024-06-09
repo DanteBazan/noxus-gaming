@@ -1,11 +1,13 @@
 // contenedor de productos
 const productsContainer = document.querySelector(".container__products");
 // contenedor del carrito
-const cartProducts = document.querySelector(".container__cards-products");
+const cartProducts = document.querySelector(".container__cart-products");
+// burbuja del carrito
+const cartBubble = document.querySelector(".cart__bubble");
 // total del carrito
-const cartTotal = document.querySelector(".cart__total");
+const cartTotal = document.querySelector("#cart__total");
 // boton para agregar al carrito
-const addButton = document.querySelector("#add-button");
+const addButton = document.querySelector(".btn-add");
 //  contenedor de categorias
 const containerCategorys = document.querySelector(".categorys");
 // lista de categorias
@@ -14,12 +16,10 @@ const categoriesList = document.querySelectorAll(".category__button");
 const seeMoreBtn = document.querySelector(".button__see-more");
 // boton de comprar
 const buyBtn = document.querySelector("#buy-button");
-// burbuja del carrito
-const cartBubble = document.querySelector(".cart__bubble");
 // boton para borrar todo en el carrito
 const deleteButtonCart = document.querySelector("#delete-cart-button");
 // modal para cuando se agrega un producto al carrito
-const seeModal = document.querySelector(".modal__add");
+const seeModal = document.querySelector(".add-modal");
 
 // Seteamos el carrito , vacío o lo que este en el localStorage según corresponda, igual que en los proyectos anteriores
 
@@ -46,16 +46,16 @@ const saveCart = () => {
 const createTemplateProduct = (product) => {
   const { id, name, precio, gameImg } = product;
   return `
-    <div class="hero__card">
+    <div class="card-product">
         <img
         src="${gameImg}"
         alt="${name}"
         class="card__img"
         />
          <h3>${name}</h3>
-            <div class="card__hero-info">
+            <div class="product-card-info">
               <span>$ ${precio}</span>
-              <button data-id="${id} data-name="${name}" data-precio="${precio}" data-img="${gameImg}">Agregar</button>
+              <button class="btn-add" data-id="${id}" data-name="${name}" data-precio="${precio}" data-img="${gameImg}">Agregar</button>
          </div>
     </div>
   `;
@@ -203,7 +203,7 @@ const renderFilterProducts = () => {
  * @returns {string}  Template del producto del carrito
  */
 
-const createProductOfCart = (cartProduct) => {
+const createCartProductTemplate = (cartProduct) => {
   const { id, name, precio, gameImg, quantity } = cartProduct;
   return `
   <div class="cart__product">
@@ -212,7 +212,7 @@ const createProductOfCart = (cartProduct) => {
       class="cart__img"
       src="${gameImg}"
       alt="${name}"
-    />
+    >
   </div>
   <div class="container__cart-info">
     <h4>Juego</h4>
@@ -220,9 +220,9 @@ const createProductOfCart = (cartProduct) => {
     <span>$ ${precio}</span>
   </div>
   <div class="container__add-cart">
-    <button class="button__cart-less" data-id="${id}" ><i class="bi bi-dash"></i></button>
+    <button class="button__cart-less" data-id="${id}">-</button>
     <span>${quantity}</span>
-    <button class="button__cart-more" data-id="${id}"><i class="bi bi-plus"></i></button>
+    <button class="button__cart-more" data-id="${id}">+</button>
   </div>
 </div>
   `;
@@ -238,7 +238,7 @@ const renderCart = () => {
     cartProducts.innerHTML = `<p class="msj-empty">No hay productos en el carrito</p>`;
     return;
   }
-  cartProducts.innerHTML = cart.map(createProductOfCart).join("");
+  cartProducts.innerHTML = cart.map(createCartProductTemplate).join("");
 };
 
 /**
@@ -303,13 +303,13 @@ const updateCartState = () => {
  */
 
 const addProduct = (e) => {
-  if (!e.target.classList.contains("add__button")) return;
+  if (!e.target.classList.contains("btn-add")) return;
   const product = createProductData(e.target.dataset);
   if (isExistingCartProduct(product)) {
     addUnitToProduct(product);
     showSuccessModal("Se agrego una unidad al carrito");
   } else {
-    createProductOfCard(product);
+    createCartProduct(product);
     showSuccessModal("El producto se ha agregado al carrito");
   }
   updateCartState();
@@ -322,7 +322,7 @@ const addProduct = (e) => {
  * @param {object} product Objeto con la información del producto que se quiere agregar una unidad al carrito
  */
 
-const addUnitCartProduct = (product) => {
+const addUnitToProduct = (product) => {
   cart = cart.map((cartProduct) =>
     cartProduct.id === product.id
       ? { ...cartProduct, quantity: cartProduct.quantity + 1 }
@@ -338,7 +338,7 @@ const addUnitCartProduct = (product) => {
 
 const createCartProduct = (product) => {
   cart = [...cart, { ...product, quantity: 1 }];
-}
+};
 
 /**
  * Función para saber si un producto ya existe en el carrito.
@@ -347,7 +347,7 @@ const createCartProduct = (product) => {
  */
 
 const isExistingCartProduct = (product) => {
-  return cart.find((item) => { item.id === product.id });
+  return cart.find((item) => item.id === product.id);
 };
 
 /**
@@ -367,10 +367,10 @@ const createProductData = (product) => {
  */
 
 const showSuccessModal = (msg) => {
-  showSuccessModal.classList.add("active-modal");
-  showSuccessModal.textContent = msg;
+  seeModal.classList.add("active-modal");
+  seeModal.textContent = msg;
   setTimeout(() => {
-    showSuccessModal.classList.remove("active-modal");
+    seeModal.classList.remove("active-modal");
   }, 1500);
 };
 
@@ -381,7 +381,7 @@ const showSuccessModal = (msg) => {
 
 const handlePlusBtnEvent = (id) => {
   const existingCartProduct = cart.find((item) => item.id == id);
-  addUnitCartProduct(existingCartProduct);
+  addUnitToProduct(existingCartProduct);
 };
 
 /**
@@ -392,7 +392,7 @@ const handlePlusBtnEvent = (id) => {
 const handleMinusBtnEvent = (id) => {
   const existingCartProduct = cart.find((item) => item.id == id);
   if (existingCartProduct.quantity === 1) {
-    if (window.confirm("¿Quiere elimar el producto del carrito?")) {
+    if (window.confirm("¿Quieres elimar el producto del carrito?")) {
       removeProductFromCart(existingCartProduct);
     }
     return;
@@ -413,6 +413,7 @@ const substractProductUnit = (existingProduct) => {
       : product;
   });
 };
+
 /**
  * Función para eliminar un producto del carrito.
  * @param {object} existingProduct Objeto con la información del producto que se quiere eliminar del carrito
