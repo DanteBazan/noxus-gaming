@@ -204,15 +204,15 @@ const renderFilterProducts = () => {
  */
 
 const createCartProductTemplate = (cartProduct) => {
-  const { id, name, precio, gameImg, quantity } = cartProduct;
+  const { id, name, precio, img, quantity } = cartProduct;
   return `
   <div class="cart__product">
   <div>
     <img
-      class="cart__img"
-      src="${gameImg}"
-      alt="${name}"
-    >
+    src="${img}"
+    alt="${name}"
+    class="cart__img"
+    />
   </div>
   <div class="container__cart-info">
     <h4>Juego</h4>
@@ -224,7 +224,7 @@ const createCartProductTemplate = (cartProduct) => {
     <span>${quantity}</span>
     <button class="button__cart-more" data-id="${id}">+</button>
   </div>
-</div>
+  </div>
   `;
 };
 
@@ -357,8 +357,8 @@ const isExistingCartProduct = (product) => {
  */
 
 const createProductData = (product) => {
-  const { id, name, precio, gameImg } = product;
-  return { id, name, precio, gameImg };
+  const { id, name, precio, img } = product;
+  return { id, name, precio, img };
 };
 
 /**
@@ -477,8 +477,8 @@ const mainInit = () => {
   renderProducts(appState.products[0]);
   seeMoreBtn.addEventListener("click", showMoreProducts);
   containerCategorys.addEventListener("click", applyFilter);
-  document.body.addEventListener("DOMContentLoaded", renderCart);
-  document.body.addEventListener("DOMContentLoaded", showCartTotal);
+  document.addEventListener("DOMContentLoaded", renderCart);
+  document.addEventListener("DOMContentLoaded", showCartTotal);
   productsContainer.addEventListener("click", addProduct);
   cartProducts.addEventListener("click", handleQuantity);
   buyBtn.addEventListener("click", completeBuy);
