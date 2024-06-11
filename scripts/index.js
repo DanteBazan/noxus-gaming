@@ -207,6 +207,7 @@ const createCartProductTemplate = (cartProduct) => {
   const { id, name, precio, img, quantity } = cartProduct;
   return `
   <div class="cart__product">
+  <div class="cart-description">
   <div>
     <img
     src="${img}"
@@ -218,6 +219,7 @@ const createCartProductTemplate = (cartProduct) => {
     <h4>Juego</h4>
     <p>${name}</p>
     <span>$ ${precio}</span>
+  </div>
   </div>
   <div class="container__add-cart">
     <button class="button__cart-less" data-id="${id}">-</button>
