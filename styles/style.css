@@ -313,7 +313,7 @@ main {
   padding: 0.5rem 1rem;
   transition: 0.5s;
   border-radius: 0.4rem;
-  animation: shadow-animation 1s infinite 5s;
+  animation: shadow-animation 3s infinite .3ms;
 }
 
 .hero__info a:hover {
