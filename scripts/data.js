@@ -240,4 +240,4 @@ const appState = {
   activeFilter: null,
 };
 
-// console.log(divideProductsInParts(6));
+

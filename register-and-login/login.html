@@ -1,26 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../styles/login.css" />
-    <title>Inicia Sesion En NoxusGaming</title>
-  </head>
-  <body>
-    <form class="form">
-      <h2>Inicia Sesion</h2>
-      <div class="form__input">
-        <input type="email" placeholder="Ingresa tu Gmail" />
-      </div>
-      <div class="form__input">
-        <input type="password" placeholder="Ingresa tu Contraseña" />
-      </div>
-      <div class="container__option-register">
-        <p>¿No estas registrado?<a href="./register.html">Registrarme</a></p>
-      </div>
-      <div class="form__button">
-        <button type="submit">Inicia Sesion</button>
-      </div>
-    </form>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../styles/forms.css">
+  <title>Inicia Sesion En NoxusGaming</title>
+</head>
+
+<body>
+
+  <form class="form__container" id="login-form" novalidate>
+
+    <p class="form__title">Inicia Sesion</p>
+
+    <!-- incio email -->
+    <div class="form__field">
+      <input type="email" placeholder="Email" class="form__input" id="email" autocomplete="off">
+    </div>
+    <!-- fin email -->
+
+    <!-- incio contraseña -->
+    <div class="form__field">
+      <input type="password" placeholder="Password" class="form__input" id="password" autocomplete="off">
+    </div>
+    <!-- fin contraseña -->
+
+    <small id="form__error"></small>
+    <input type="submit" class="form__submit-btn" value="Iniciar Sesion">
+    <p class="form__redirect">¿No tenes cuenta? <a class="link__gradient" href="./register.html">Registrate</a></p>
+
+  </form>
+
+  <script src="../scripts/login.js"></script>
+</body>
+
 </html>

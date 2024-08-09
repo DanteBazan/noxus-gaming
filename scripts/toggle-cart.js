@@ -32,7 +32,7 @@ const showCart = () => {
 /**
  * Función para cerrar el menú hamburguesa y el overlay cuando se hace click en un link del menú
  * Al clickear un enlace del menú hamburguesa, lo cierra. Si lo que clickeemos dentro de el ul no contiene la clase "navbar-link" no pasa nada.
- * @param {event} e   Evento de click
+ * @pam.comram {event} e   Evento de click
  * @returns
  */
 

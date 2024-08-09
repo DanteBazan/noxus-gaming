@@ -2,13 +2,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* border: 1px solid red; */
 }
 
 :root {
   /*BACKGROUNDS-COLORS  */
   --color-main: #0c0c0c;
-  /* --color-second: #222; */
   --color-second: #141313;
   --color-red: rgb(214, 40, 40);
   --color-three: #48e;
@@ -68,7 +66,6 @@ header {
 .navbar__list li a:hover {
   padding-bottom: 0.2rem;
   border-bottom: 3px solid var(--color-white);
-  text-shadow: var(--color-white) 0 0 7px;
 }
 
 /* TOGGLE-MENU */
@@ -609,8 +606,12 @@ footer {
     box-shadow: 0 0 8px var(--color-red);
   }
 
+  50% {
+    box-shadow: 0 0 20px var(--color-red);
+  }
+
   to {
-    box-shadow: 0 0 15px var(--color-red);
+    box-shadow: 0 0 8px var(--color-red);
   }
 }
 

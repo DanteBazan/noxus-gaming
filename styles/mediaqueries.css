@@ -24,6 +24,7 @@
 
   .hero__info p {
     text-align: center;
+    max-width: 900px;
   }
 
   .navbar {
@@ -33,11 +34,9 @@
   }
 
   .navbar__list {
-    background: linear-gradient(
-      to bottom,
-      var(--color-main),
-      var(--color-second)
-    );
+    background: linear-gradient(to bottom,
+        var(--color-main),
+        var(--color-second));
     width: 100%;
     height: calc(100vh - 59.38px);
     position: absolute;
@@ -72,16 +71,16 @@
     font-size: 1.5rem;
   }
 
-/* BOTONES DE CATEGORIAS */
+  /* BOTONES DE CATEGORIAS */
 
-.categorys {
-  flex-wrap: wrap;
-  max-width: 390px;
-}
+  .categorys {
+    flex-wrap: wrap;
+    max-width: 390px;
+  }
 
-.category__button {
-  width: 100px;
-}
+  .category__button {
+    width: 100px;
+  }
 
   /* .close__menu {
     display: block;
